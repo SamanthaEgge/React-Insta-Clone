@@ -6,8 +6,8 @@ import CommentSection from '../CommentSection/CommentSection'
 const PostContainer = (props) => {
     return (
         <div className='allposts-container'>
-            {props.postData.map(post => (
-                <div className='post-container'>
+            {props.postData.map((post, index) => (
+                <div key={index} className='post-container'>
                     <div className='post-header'>
                         <img src={post.thumbnailUrl} alt="user thumbnail" />
                         <h2>{post.username}</h2>

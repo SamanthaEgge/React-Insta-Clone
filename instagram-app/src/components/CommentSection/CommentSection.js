@@ -6,8 +6,8 @@ const CommentSection = (props) => {
     return (
         <div className='comment-container'>
             <div className='comment-list'>
-                {props.comments.map(comment => (
-                    <p><b>{comment.username}</b> {comment.text}</p>
+                {props.comments.map((comment, index) => (
+                    <p key={index}><b>{comment.username}</b> {comment.text}</p>
                 ))}
             </div>
         </div>
