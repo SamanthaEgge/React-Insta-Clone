@@ -1,0 +1,16 @@
+.searchbar-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchbar-title {
+    font-size: 26px;
+}
+
+.searchbar-titletext {
+    font-family: 'Lobster';
+}
+
+.searchbar-nav {
+    font-size: 26px;
+}
