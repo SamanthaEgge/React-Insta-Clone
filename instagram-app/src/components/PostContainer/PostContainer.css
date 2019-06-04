@@ -1,3 +1,7 @@
+.allposts-container {
+    width: 800px;
+}
+
 .post-header {
     display: flex;
     align-items: center;

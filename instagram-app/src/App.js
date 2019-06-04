@@ -7,8 +7,14 @@ import PostContainer from './components/PostContainer/PostContainer'
 
 class App extends React.Component {
   state = {
-    dummyData: dummyData
+    dummyData: []
   }
+
+   componentDidMount () {
+    this.setState({
+      dummyData: dummyData
+    });
+   }
 
   render () {
     return (
