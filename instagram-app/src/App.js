@@ -10,7 +10,7 @@ class App extends React.Component {
     dummyData: []
   }
 
-   componentDidMount () {
+  componentDidMount () {
     this.setState({
       dummyData: dummyData
     });
