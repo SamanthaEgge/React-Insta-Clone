@@ -4,7 +4,6 @@ import './Login.css';
 
 class Login extends React.Component {
     state = {
-        toggle: false,
         username: '',
         password: '',
     }
@@ -17,25 +16,20 @@ class Login extends React.Component {
     }
 
     login = (event) => {
+        const userInput = this.state.username
         event.preventDefault()
-
         if (localStorage.getItem('username')) {
             localStorage.removeItem('username')
-            localStorage.setItem('username', JSON.stringify(event.target.username));
-            this.setState({
-                toggle: false
-            })
+            localStorage.setItem('username', JSON.stringify(userInput));
+
         } else {
-            localStorage.setItem('username', JSON.stringify(event.target.username))
-            this.setState({
-                toggle: true
-            })
+            localStorage.setItem('username', JSON.stringify(userInput))
         }
 
-        // this.setState({
-        //     username: [this.state.username],
-        //     password: [this.state.value]
-        // })
+        this.setState({
+            username: [event.target.username],
+            password: [event.target.password]
+        })
 
     }
 
@@ -47,17 +41,16 @@ class Login extends React.Component {
                     type='text'
                     name='username'
                     placeholder='Username'
-                    value={this.state.username} 
+                    value={this.state.username}
                     onChange={this.handleChanges} />
 
                     <input 
                     type='password'
                     name='password'
                     placeholder='Password'
-                    value={this.state.password}
                     onChange={this.handleChanges} />
-                    
-                    <button>Log-in</button>
+
+                    <button type='submit'>Log-in</button>
                 </form>
             </div>
         )
