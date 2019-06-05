@@ -40,16 +40,16 @@ class CommentSection extends React.Component {
         return (
             <div className='comment-container'>
                 <div className='comment-list'>
-                    {this.state.comments.map(comment => {
-                        return <Comment comment={comment} key={comment.id} />})}
+                    {this.state.comments.map(comments => {
+                        return <Comment comments={comments} key={comments.id} />})}
                 </div>
                 <div className='addcomment-section'>
                     <form onSubmit={this.addNewComment} className='comment-form'>
                         <input 
                         type='text'
                         name='input'
-                        placeholder='Add a comment . . .'
-                        value={this.state.input}
+                        placeholder='... Post'
+                        value={this.state.comments.text}
                         onChange={this.handleChanges} />
                         <button className='addbutton'>
                             Add Comment
