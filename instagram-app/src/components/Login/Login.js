@@ -31,6 +31,8 @@ class Login extends React.Component {
             password: [event.target.password]
         })
 
+        window.location.reload();
+
     }
 
     render () {
