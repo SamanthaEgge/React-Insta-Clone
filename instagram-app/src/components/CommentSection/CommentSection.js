@@ -3,14 +3,14 @@ import React from 'react';
 import './CommentSection.css'
 import Comment from './Comment'
 
+// console.log(JSON.parse(localStorage.getItem('username'));
+
 class CommentSection extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
             comments: props.comments,
             input: ''
-            // id: '',
-            // text: '',
         }
     }
 
@@ -27,7 +27,7 @@ class CommentSection extends React.Component {
         const newComment = {
             text: this.state.text,
             id: Date.now(),
-            user: 'samanthaegge'
+            username: JSON.parse(localStorage.getItem('username'))
         }
 
         this.setState({
@@ -40,8 +40,8 @@ class CommentSection extends React.Component {
         return (
             <div className='comment-container'>
                 <div className='comment-list'>
-                    {this.state.comments.map(comments => {
-                        return <p key={comments.id}><b>{comments.username}</b> {comments.text}</p>})}
+                    {this.state.comments.map(comment => {
+                        return <p key={comment.id}><b>{comment.username}</b> {comment.text}</p>})}
                 </div>
                 <div className='addcomment-section'>
                     <form onSubmit={this.addNewComment} className='comment-form'>
