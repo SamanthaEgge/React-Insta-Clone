@@ -24,8 +24,7 @@ export const SearchContainer = styled.div`
 
 export const SearchInput = styled.input`
     padding: 0.5em;
-    margin 0.5em;
-    background-color:
+    margin: 0.5em;
     
 `;
 

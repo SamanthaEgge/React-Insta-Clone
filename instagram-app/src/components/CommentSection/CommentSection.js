@@ -1,9 +1,6 @@
 import React from 'react';
 
-import './CommentSection.css'
-import Comment from './Comment'
-
-// console.log(JSON.parse(localStorage.getItem('username'));
+import {CommentsContainer, CommentList, AddCommentSection, CommentForm, CommentInput, CommentAddBtn} from '../../styles/CommentSection/CommentSection'
 
 class CommentSection extends React.Component {
     constructor (props) {
@@ -38,25 +35,25 @@ class CommentSection extends React.Component {
 
     render () { 
         return (
-            <div className='comment-container'>
-                <div className='comment-list'>
+            <CommentsContainer>
+                <CommentList>
                     {this.state.comments.map(comment => {
                         return <p key={comment.id}><b>{comment.username}</b> {comment.text}</p>})}
-                </div>
-                <div className='addcomment-section'>
-                    <form onSubmit={this.addNewComment} className='comment-form'>
-                        <input 
+                </CommentList>
+                <AddCommentSection>
+                    <CommentForm onSubmit={this.addNewComment} className='comment-form'>
+                        <CommentInput 
                         type='text'
                         name='text'
-                        placeholder='... Post'
+                        placeholder='... Add comment'
                         value={this.state.text}
                         onChange={this.handleChanges} />
-                        <button className='addbutton'>
-                            Add Comment
-                        </button>
-                    </form>
-                </div>
-            </div>
+                        <CommentAddBtn className='addbutton'>
+                            Post
+                        </CommentAddBtn>
+                    </CommentForm>
+                </AddCommentSection>
+            </CommentsContainer>
         )
     }
 }
