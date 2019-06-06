@@ -19,7 +19,7 @@ export const UserThumb = styled.img`
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    margin: 0 30px;
+    margin: 0 20px;
 
 `
 

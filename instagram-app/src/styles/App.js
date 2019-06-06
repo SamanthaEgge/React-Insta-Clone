@@ -6,7 +6,7 @@ export const StyleH1 = styled.h1`
 
 export const StyleH2 = styled.h2`
     font-size: 1.1em;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
     font-family: 'Raleway';
 `
 

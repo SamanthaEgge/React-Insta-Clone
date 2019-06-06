@@ -1,6 +1,5 @@
 import React from 'react'
 
-import './PostContainer.css'
 import SearchBar from '../SearchBar/SearchBar'
 import PostContainer from '../PostContainer/PostContainer'
 import dummyData from '../../dummy-data'

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Login.css';
+import { LoginContainer } from '../../styles/Login/Login'
 
 class Login extends React.Component {
     state = {

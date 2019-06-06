@@ -3,6 +3,7 @@ import React from 'react';
 import { PostsContainer, Post, PostHeader, UserThumb, PostContent, PostImg, PostInteraction } from '../../styles/PostContainer/PostContainer'
 import { StyleH2, StyleP } from '../../styles/App'
 import CommentSection from '../CommentSection/CommentSection'
+import Social from './Social'
 
 const PostContainer = (props) => {
     return (
@@ -16,8 +17,7 @@ const PostContainer = (props) => {
                     <PostContent>
                         <PostImg src={post.imageUrl} />
                         <PostInteraction>
-                            like and comment icons
-                            <StyleP><b>{post.likes} likes</b></StyleP>
+                            <Social data={post} />
                         </PostInteraction>
                     </PostContent>
                     <CommentSection comments={post.comments} />
