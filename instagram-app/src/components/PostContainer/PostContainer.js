@@ -1,28 +1,29 @@
 import React from 'react';
 
-import './PostContainer.css'
+import { PostsContainer, Post, PostHeader, UserThumb, PostContent, PostImg, PostInteraction } from '../../styles/PostContainer/PostContainer'
+import { StyleH2, StyleP } from '../../styles/App'
 import CommentSection from '../CommentSection/CommentSection'
 
 const PostContainer = (props) => {
     return (
-        <div className='allposts-container'>
-            {props.postData.map((post, index) => (
-                <div key={index} className='post-container'>
-                    <div className='post-header'>
-                        <img src={post.thumbnailUrl} alt="user thumbnail" />
-                        <h2>{post.username}</h2>
-                    </div>
-                    <div className='post-content'>
-                        <img src={post.imageUrl} alt="post" />
-                        <div className='post-interaction'>
+        <PostsContainer>
+            {props.postData.map(post => (
+                <Post key={post.id}>
+                    <PostHeader>
+                        <UserThumb src={post.thumbnailUrl} />
+                        <StyleH2>{post.username}</StyleH2>
+                    </PostHeader>
+                    <PostContent>
+                        <PostImg src={post.imageUrl} />
+                        <PostInteraction>
                             like and comment icons
-                            <p><b>{post.likes} likes</b></p>
-                        </div>
-                    </div>
+                            <StyleP><b>{post.likes} likes</b></StyleP>
+                        </PostInteraction>
+                    </PostContent>
                     <CommentSection comments={post.comments} />
-                </div>
+                </Post>
             ))}
-        </div>
+        </PostsContainer>
     )
 }
 
